@@ -7,47 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/IV_SignUpElement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+
+
+        app:srcCompat="@drawable/signup_up_element"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-244dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/clan_pro_black"
         android:text="User Registration"
-        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335" />
+        app:layout_constraintVertical_bias="0.405" />
 
     <TextView
         android:id="@+id/TV_BackLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/clan_pro_medium"
         android:text="Login"
+        android:textColor="@color/blue"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintHorizontal_bias="0.691"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.921" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/clan_pro_medium"
         android:text="Already Registered?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintVertical_bias="0.921"
+        android:textColor="@color/black"
+        />
 
     <Button
         android:id="@+id/BTN_Register"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/clan_pro_bold"
+        android:backgroundTint="@color/blue"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,18 +75,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="157dp"
-        android:layout_height="205dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058"
-        app:srcCompat="@drawable/cropped_nu_shield_fc_rgb_pos_aw" />
-
     <EditText
         android:id="@+id/ET_LastName"
         android:layout_width="130dp"
@@ -75,6 +82,7 @@
         android:ems="10"
         android:hint="Last Name"
         android:inputType="text"
+        android:fontFamily="@font/clan_pro_regular_italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.772"
@@ -89,6 +97,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPassword"
+        android:fontFamily="@font/clan_pro_regular_italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -102,6 +111,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="First Name"
+        android:fontFamily="@font/clan_pro_regular_italic"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,6 +126,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
+        android:fontFamily="@font/clan_pro_regular_italic"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,5 +134,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

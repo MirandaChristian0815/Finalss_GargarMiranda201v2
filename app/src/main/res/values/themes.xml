@@ -3,6 +3,8 @@
     <style name="Base.Theme.Finalss_GargarMiranda" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:fontFamily">@font/clan_pro</item>
     </style>
 
     <style name="Theme.Finalss_GargarMiranda" parent="Base.Theme.Finalss_GargarMiranda" />
