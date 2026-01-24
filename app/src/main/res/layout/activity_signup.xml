@@ -10,13 +10,27 @@
 
     <ImageView
         android:id="@+id/IV_SignUpElement"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/IV_SignUpElement"
+        app:srcCompat="@drawable/signup_up_element" />
 
-
-        app:srcCompat="@drawable/signup_up_element"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-244dp" />
+    <ImageView
+        android:id="@+id/IV_Logo"
+        android:layout_width="136dp"
+        android:layout_height="183dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/cropped_nu_shield_fc_rgb_pos_aw" />
 
     <TextView
         android:id="@+id/textView"
@@ -25,12 +39,13 @@
         android:fontFamily="@font/clan_pro_black"
         android:text="User Registration"
         android:textColor="@color/white"
-        android:textSize="32dp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.226" />
 
     <TextView
         android:id="@+id/TV_BackLogin"
@@ -80,61 +95,60 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/clan_pro_regular_italic"
         android:hint="Last Name"
         android:inputType="text"
-        android:fontFamily="@font/clan_pro_regular_italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <EditText
         android:id="@+id/ET_EmailSignup"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/clan_pro_regular_italic"
         android:hint="Email"
         android:inputType="textPassword"
-        android:fontFamily="@font/clan_pro_regular_italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.611" />
 
     <EditText
         android:id="@+id/ET_FirstName"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="First Name"
         android:fontFamily="@font/clan_pro_regular_italic"
+        android:hint="First Name"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <EditText
         android:id="@+id/ET_PassowordSignup"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Password"
         android:fontFamily="@font/clan_pro_regular_italic"
+        android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
-
+        app:layout_constraintVertical_bias="0.74" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

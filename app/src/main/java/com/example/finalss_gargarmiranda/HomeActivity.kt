@@ -1,6 +1,8 @@
 package com.example.finalss_gargarmiranda
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,12 @@ class HomeActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        val btnReserve: ImageButton = findViewById(R.id.btn_reserve)
+        btnReserve.setOnClickListener {
+            val intent = Intent(this, ReserveActivity::class.java)
+            startActivity(intent)
         }
     }
 }

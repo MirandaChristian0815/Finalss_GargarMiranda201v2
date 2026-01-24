@@ -12,11 +12,14 @@
         android:id="@+id/IV_Background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
-        app:srcCompat="@drawable/login_down_element"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="116dp" />
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/login_down_element" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,13 +41,14 @@
         android:fontFamily="@font/clan_pro_medium"
         android:gravity="center"
         android:text="Welcome to National University Facility Reservation System"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.522" />
 
     <Button
         android:id="@+id/BTN_Login"
@@ -96,6 +100,7 @@
         android:hint="Username"
         android:inputType="text"
         android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -111,6 +116,7 @@
         android:fontFamily="@font/clan_pro_regular_italic"
         android:hint="Password"
         android:inputType="textPassword"
+        android:backgroundTint="@color/white"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
