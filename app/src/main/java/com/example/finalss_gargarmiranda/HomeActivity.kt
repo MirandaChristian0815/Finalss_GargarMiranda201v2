@@ -24,5 +24,17 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, ReserveActivity::class.java)
             startActivity(intent)
         }
+
+        val btnList: ImageButton = findViewById(R.id.btn_reservation_list)
+        btnList.setOnClickListener {
+            val intent = Intent(this, ReservationListActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnReport: ImageButton = findViewById(R.id.btn_report_facility)
+        btnReport.setOnClickListener {
+            val intent = Intent(this, ReportFacilityActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
