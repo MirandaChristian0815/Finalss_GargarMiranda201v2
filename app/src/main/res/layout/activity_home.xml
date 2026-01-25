@@ -8,7 +8,7 @@
     android:background="#FFFFFF"
     tools:context=".HomeActivity">
 
-
+    <!-- Welcome Header -->
     <LinearLayout
         android:id="@+id/welcome_banner"
         android:layout_width="wrap_content"
@@ -29,6 +29,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_username_display"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="User"
@@ -37,7 +38,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-
+    <!-- Reserve Facility -->
     <LinearLayout
         android:id="@+id/ll_reserve"
         android:layout_width="wrap_content"

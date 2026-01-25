@@ -27,6 +27,7 @@ class SignupActivity : AppCompatActivity() {
         val Password = findViewById<EditText>(R.id.ET_PassowordSignup)
         val Register = findViewById<Button>(R.id.BTN_Register)
         val BackLogin = findViewById<TextView>(R.id.TV_BackLogin)
+        val Username = findViewById<EditText>(R.id.ET_UsernameSignup)
 
         Register.setOnClickListener {
             val i = Intent(this, HomeActivity::class.java)

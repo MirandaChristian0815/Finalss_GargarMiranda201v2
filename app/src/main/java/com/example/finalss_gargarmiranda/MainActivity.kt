@@ -21,14 +21,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         val Username = findViewById<EditText>(R.id.ET_Username)
-        val Password = findViewById<EditText>(R.id.ET_Password)
-        val Login = findViewById<Button>(R.id.BTN_Login)
+        val login = findViewById<Button>(R.id.BTN_Login)
         val Signup = findViewById<Button>(R.id.BTN_Signup)
 
-        Login.setOnClickListener {
+        login.setOnClickListener {
+            val username = Username.text.toString()
             val i = Intent(this, HomeActivity::class.java)
+            i.putExtra("USER_NAME", username)
             startActivity(i)
-
         }
 
         Signup.setOnClickListener {
