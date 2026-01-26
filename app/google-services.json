@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154461436844",
+    "project_id": "nuc-facilityreservation",
+    "storage_bucket": "nuc-facilityreservation.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154461436844:android:613cb1f4c25069e3579809",
+        "android_client_info": {
+          "package_name": "com.example.finalss_gargarmiranda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYbZLpmjdfKvdnOmisKw-exo3O6-28BZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
