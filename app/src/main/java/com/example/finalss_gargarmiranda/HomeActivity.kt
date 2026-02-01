@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat.enableEdgeToEdge
 import androidx.core.view.WindowInsetsCompat
 
 class HomeActivity : AppCompatActivity() {
@@ -22,32 +23,28 @@ class HomeActivity : AppCompatActivity() {
 
         // Get the username passed from MainActivity
         val username = intent.getStringExtra("USER_NAME")
-        val usernameDisplay = findViewById<TextView>(R.id.tv_username_display)
-        val Reserve: ImageButton = findViewById(R.id.btn_reserve)
-        val List: ImageButton = findViewById(R.id.btn_reservation_list)
-        val Report: ImageButton = findViewById(R.id.btn_report_facility)
+        val tvUsernameDisplay = findViewById<TextView>(R.id.tv_username_display)
         
         // Display the username if it's not null or empty
         if (!username.isNullOrEmpty()) {
-            usernameDisplay.text = username
+            tvUsernameDisplay.text = username
         }
 
-        Reserve.setOnClickListener {
+        val btnReserve: ImageButton = findViewById(R.id.btn_reserve)
+        btnReserve.setOnClickListener {
             val intent = Intent(this, ReserveActivity::class.java)
-            intent.putExtra("USER_NAME", username)
             startActivity(intent)
         }
 
-
-        List.setOnClickListener {
+        val btnList: ImageButton = findViewById(R.id.btn_reservation_list)
+        btnList.setOnClickListener {
             val intent = Intent(this, ReservationListActivity::class.java)
-            intent.putExtra("USER_NAME", username)
             startActivity(intent)
         }
 
-        Report.setOnClickListener {
+        val btnReport: ImageButton = findViewById(R.id.btn_report_facility)
+        btnReport.setOnClickListener {
             val intent = Intent(this, ReportFacilityActivity::class.java)
-            intent.putExtra("USER_NAME", username)
             startActivity(intent)
         }
     }
