@@ -21,6 +21,20 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/signup_up_element" />
 
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left_solid_full"
+        app:tint="@color/white" />
+
     <ImageView
         android:id="@+id/IV_Logo"
         android:layout_width="136dp"

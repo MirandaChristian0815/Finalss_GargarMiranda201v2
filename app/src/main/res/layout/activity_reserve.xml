@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_border"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -21,17 +21,52 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="12dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/arrow_left_solid_full"
+                app:tint="@color/black" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/clan_pro_black"
-                android:text="Reserve Activity"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/cropped_nu_shield_fc_rgb_pos_aw" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/clan_pro_black"
+                    android:text="NU Clark"
+                    android:textColor="@color/blue"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/clan_pro_black"
+            android:gravity="center"
+            android:text="Reserve Facility"
+            android:textColor="@color/blue"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/BTN_peArea"
@@ -44,7 +79,7 @@
                 android:paddingStart="20dp"
                 android:text="PE Area"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -60,7 +95,7 @@
                 android:paddingStart="20dp"
                 android:text="AVR"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -76,7 +111,7 @@
                 android:paddingStart="20dp"
                 android:text="Case Room"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -92,7 +127,7 @@
                 android:paddingStart="20dp"
                 android:text="LRC Discussion Room 1"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -108,7 +143,7 @@
                 android:paddingStart="20dp"
                 android:text="LRC Discussion Room 2"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -124,7 +159,7 @@
                 android:paddingStart="20dp"
                 android:text="Sports Complex"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -140,7 +175,7 @@
                 android:paddingStart="20dp"
                 android:text="Computer Laboratory"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
                 app:cornerRadius="12dp"
                 app:strokeColor="#BDBDBD" />
@@ -152,35 +187,27 @@
                 android:ems="10"
                 android:fontFamily="@font/clan_pro_regular_italic"
                 android:hint="Others (Please Specify): "
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.453"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.732" />
+                android:inputType="text" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <View
-        android:id="@+id/bottom_border"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#DDDDDD"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/modern_nav_background"
+        android:elevation="8dp"
         app:itemIconSize="32dp"
         app:itemIconTint="@android:color/black"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

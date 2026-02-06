@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome!"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="User"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -53,8 +53,8 @@
 
         <ImageButton
             android:id="@+id/btn_reserve"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_reservefacility" />
@@ -84,8 +84,8 @@
 
         <ImageButton
             android:id="@+id/btn_reservation_list"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_reservationlist" />
@@ -133,27 +133,17 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Bottom Navigation Border Line -->
-    <View
-        android:id="@+id/bottom_border"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!-- Floating Modern Bottom Navigation with New Icons -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/white"
-        app:itemIconSize="40dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/modern_nav_background"
+        android:elevation="8dp"
+        app:itemIconSize="32dp"
         app:itemIconTint="@android:color/black"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"

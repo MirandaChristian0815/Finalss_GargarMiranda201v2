@@ -21,11 +21,11 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
 
-        // Get the username passed from MainActivity
+
         val username = intent.getStringExtra("USER_NAME")
         val tvUsernameDisplay = findViewById<TextView>(R.id.tv_username_display)
         
-        // Display the username if it's not null or empty
+
         if (!username.isNullOrEmpty()) {
             tvUsernameDisplay.text = username
         }
