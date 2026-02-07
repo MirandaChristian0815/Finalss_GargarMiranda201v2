@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Finalss_GargarMiranda</string>
+    <string-array name="user_types">
+        <item>Student</item>
+        <item>Faculty</item>
+    </string-array>
 </resources>

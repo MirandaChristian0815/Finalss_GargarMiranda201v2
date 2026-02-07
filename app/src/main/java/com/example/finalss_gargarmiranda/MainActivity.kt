@@ -28,9 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val emailET = findViewById<EditText>(R.id.ET_Username)
+        val emailET = findViewById<EditText>(R.id.ET_Email)
         val passwordET = findViewById<EditText>(R.id.ET_Password)
-        val Username = findViewById<EditText>(R.id.ET_Username)
         val login = findViewById<Button>(R.id.BTN_Login)
         val Signup = findViewById<Button>(R.id.BTN_Signup)
 
