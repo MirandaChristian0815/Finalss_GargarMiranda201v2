@@ -11,7 +11,7 @@
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_height="43dp"
         android:layout_margin="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="12dp"
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="NU Clark"
-                    android:textColor="#305496"
+                    android:textColor="@color/blue"
                     android:fontFamily="@font/clan_pro_bold"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -69,7 +69,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="My Reservations"
                 android:fontFamily="@font/clan_pro_bold"
-                android:textColor="#1D3557"
+                android:textColor="@color/blue"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 

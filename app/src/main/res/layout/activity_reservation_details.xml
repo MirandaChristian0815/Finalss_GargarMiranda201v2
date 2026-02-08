@@ -11,7 +11,7 @@
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_height="43dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="12dp"
         android:scaleType="fitCenter"

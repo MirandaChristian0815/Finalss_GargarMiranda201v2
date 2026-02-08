@@ -12,13 +12,13 @@
         android:id="@+id/header_bg"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#1D3557"
+        android:background="@color/blue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_height="43dp"
         android:layout_margin="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="12dp"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Profile Image with White Border -->
+
 
     <TextView
         android:id="@+id/tv_my_profile"
