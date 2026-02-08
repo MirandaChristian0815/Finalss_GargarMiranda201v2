@@ -15,6 +15,7 @@ class PendingReservationsAdapter(
     interface OnReservationUpdateListener {
         fun onApprove(reservation: Reservation)
         fun onDeny(reservation: Reservation)
+        fun onReservationClick(reservation: Reservation)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -58,6 +59,10 @@ class PendingReservationsAdapter(
 
             denyButton.setOnClickListener {
                 listener.onDeny(reservation)
+            }
+
+            itemView.setOnClickListener {
+                listener.onReservationClick(reservation)
             }
         }
     }
