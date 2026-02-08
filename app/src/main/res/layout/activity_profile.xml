@@ -105,7 +105,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/clan_pro_black"
         android:text="Logout"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         app:backgroundTint="@color/yellow"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
