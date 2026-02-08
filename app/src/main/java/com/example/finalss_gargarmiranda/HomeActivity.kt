@@ -32,10 +32,11 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
-        val username = intent.getStringExtra("USER_NAME")
         val tvUsernameDisplay = findViewById<TextView>(R.id.tv_username_display)
         val llPending = findViewById<LinearLayout>(R.id.ll_pending)
         val btnPending = findViewById<ImageButton>(R.id.btn_pending_reservations)
+        val tvReportLabel = findViewById<TextView>(R.id.tv_report_label)
+        var currentUserType: String? = null
 
         // Check user type from Firestore
         val userId = auth.currentUser?.uid
@@ -45,13 +46,16 @@ class HomeActivity : AppCompatActivity() {
                     if (document != null) {
                         val firstName = document.getString("firstName")
                         val userType = document.getString("userType")
+                        currentUserType = userType
 
                         tvUsernameDisplay.text = firstName ?: "User"
 
                         if (userType == "Faculty") {
                             llPending.visibility = View.VISIBLE
+                            tvReportLabel.text = "LIST OF\nREPORTS"
                         } else {
                             llPending.visibility = View.GONE
+                            tvReportLabel.text = "REPORT\nFACILITY"
                         }
                     }
                 }
@@ -74,8 +78,14 @@ class HomeActivity : AppCompatActivity() {
 
         val btnReport: ImageButton = findViewById(R.id.btn_report_facility)
         btnReport.setOnClickListener {
-            val intent = Intent(this, ReportFacilityActivity::class.java)
-            startActivity(intent)
+            if (currentUserType == "Faculty") {
+                // Navigate to List of Reports Activity (to be created)
+                val intent = Intent(this, ReportListActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, ReportFacilityActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         btnPending.setOnClickListener {

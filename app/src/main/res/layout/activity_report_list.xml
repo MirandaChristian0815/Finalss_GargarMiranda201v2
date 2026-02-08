@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".ReservationListActivity">
+    tools:context=".ReportListActivity">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="NU Clark"
-                    android:textColor="#305496"
+                    android:textColor="@color/blue"
                     android:fontFamily="@font/clan_pro_bold"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -66,21 +66,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center_horizontal"
-                android:text="My Reservations"
+                android:text="List of Reports"
                 android:fontFamily="@font/clan_pro_bold"
-                android:textColor="#1D3557"
+                android:textColor="@color/blue"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/reservationRecyclerView"
+                android:id="@+id/reportRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:padding="16dp"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                tools:listitem="@layout/item_reservation" />
+                tools:listitem="@layout/item_report" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
