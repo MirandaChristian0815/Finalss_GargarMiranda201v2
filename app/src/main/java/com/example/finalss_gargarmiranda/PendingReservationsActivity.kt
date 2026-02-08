@@ -1,12 +1,12 @@
 package com.example.finalss_gargarmiranda
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finalss_gargarmiranda.PendingReservationsAdapter
-import com.example.finalss_gargarmiranda.Reservation
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PendingReservationsActivity : AppCompatActivity(), PendingReservationsAdapter.OnReservationUpdateListener {
@@ -19,6 +19,11 @@ class PendingReservationsActivity : AppCompatActivity(), PendingReservationsAdap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pending_reservations)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         recyclerView = findViewById(R.id.pendingReservationsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -39,8 +44,8 @@ class PendingReservationsActivity : AppCompatActivity(), PendingReservationsAdap
 
                 reservations.clear()
                 for (doc in snapshots!!) {
-
                     val submittedBy = doc.get("submittedBy") as? Map<*, *>
+                    val activityDetails = doc.get("activityDetails") as? Map<*, *>
                     val reservationSlot = doc.get("reservationSlot") as? Map<*, *>
 
                     val reservation = Reservation(
@@ -49,6 +54,10 @@ class PendingReservationsActivity : AppCompatActivity(), PendingReservationsAdap
                         date = reservationSlot?.get("date")?.toString() ?: "",
                         time = reservationSlot?.get("time")?.toString() ?: "",
                         reservedBy = submittedBy?.get("name")?.toString() ?: "",
+                        position = submittedBy?.get("position")?.toString() ?: "",
+                        title = activityDetails?.get("title")?.toString() ?: "",
+                        attendees = activityDetails?.get("attendees")?.toString() ?: "",
+                        speaker = activityDetails?.get("speaker")?.toString() ?: "",
                         status = doc.getString("status") ?: ""
                     )
 
@@ -78,5 +87,19 @@ class PendingReservationsActivity : AppCompatActivity(), PendingReservationsAdap
             .addOnFailureListener { e ->
                 Log.w("PendingReservations", "Error updating reservation status", e)
             }
+    }
+
+    override fun onReservationClick(reservation: Reservation) {
+        val intent = Intent(this, ReservationDetailsActivity::class.java)
+        intent.putExtra("facility", reservation.facility)
+        intent.putExtra("reservedBy", reservation.reservedBy)
+        intent.putExtra("position", reservation.position)
+        intent.putExtra("title", reservation.title)
+        intent.putExtra("date", reservation.date)
+        intent.putExtra("time", reservation.time)
+        intent.putExtra("attendees", reservation.attendees)
+        intent.putExtra("speaker", reservation.speaker)
+        intent.putExtra("status", reservation.status)
+        startActivity(intent)
     }
 }

@@ -8,6 +8,8 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class FillUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,8 +41,21 @@ class FillUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val time = "${timeFromEditText.text} - ${timeToEditText.text}"
+            val timeFrom = timeFromEditText.text.toString()
+            val timeTo = timeToEditText.text.toString()
             val date = datesEditText.text.toString()
+
+            if (!isValidDate(date)) {
+                Toast.makeText(this, "Invalid date format. Please use dd/mm/yy", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!isValidTime(timeFrom) || !isValidTime(timeTo)) {
+                Toast.makeText(this, "Invalid time format. Please use hh:mma or hh:mmam", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val time = "$timeFrom - $timeTo"
 
             if (facilityName != null) {
                 ReservationRepo.isReservationExisting(facilityName, date, time) { isExisting ->
@@ -79,6 +94,32 @@ class FillUpActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Error: Facility name not found.", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun isValidDate(date: String): Boolean {
+        val sdf = SimpleDateFormat("dd/MM/yy", Locale.US)
+        sdf.isLenient = false
+        return try {
+            sdf.parse(date)
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    private fun isValidTime(time: String): Boolean {
+        return try {
+            val sdf = if (time.length == 7) {
+                SimpleDateFormat("hh:mma", Locale.US)
+            } else {
+                SimpleDateFormat("h:mma", Locale.US)
+            }
+            sdf.isLenient = false
+            sdf.parse(time)
+            true
+        } catch (e: Exception) {
+            false
         }
     }
 }
