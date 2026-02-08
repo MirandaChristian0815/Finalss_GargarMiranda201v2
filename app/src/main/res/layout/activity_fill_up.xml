@@ -127,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:inputType="date"
+                android:hint="dd/mm/yy"
                 android:backgroundTint="@color/black" />
 
             <TextView
@@ -186,7 +187,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:inputType="time"
-                    android:backgroundTint="@color/black" />
+                    android:backgroundTint="@color/black"
+                    android:hint="XX:XXam/pm"/>
                 <EditText
                     android:id="@+id/ETFillUp_TimeTo"
                     android:layout_width="0dp"
@@ -194,7 +196,8 @@
                     android:layout_weight="1"
                     android:layout_marginStart="16dp"
                     android:inputType="time"
-                    android:backgroundTint="@color/black" />
+                    android:backgroundTint="@color/black"
+                    android:hint="XX:XXam/pm" />
             </LinearLayout>
 
             <TextView
