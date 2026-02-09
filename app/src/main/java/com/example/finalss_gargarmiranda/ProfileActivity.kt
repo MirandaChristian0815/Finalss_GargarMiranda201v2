@@ -22,9 +22,6 @@ class ProfileActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        NavigationHelper.setupBottomNavigation(this, bottomNav, R.id.navigation_profile)
-
         val logoutButton = findViewById<Button>(R.id.btn_logout)
         logoutButton.setOnClickListener {
             auth.signOut()
@@ -63,5 +60,11 @@ class ProfileActivity : AppCompatActivity() {
                     }
                 }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        NavigationHelper.setupBottomNavigation(this, bottomNav, R.id.navigation_profile)
     }
 }

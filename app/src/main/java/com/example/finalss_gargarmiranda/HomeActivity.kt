@@ -61,9 +61,6 @@ class HomeActivity : AppCompatActivity() {
                 }
         }
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        NavigationHelper.setupBottomNavigation(this, bottomNav, R.id.navigation_home)
-
         val btnReserve: ImageButton = findViewById(R.id.btn_reserve)
         btnReserve.setOnClickListener {
             val intent = Intent(this, ReserveActivity::class.java)
@@ -92,5 +89,11 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, PendingReservationsActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        NavigationHelper.setupBottomNavigation(this, bottomNav, R.id.navigation_home)
     }
 }

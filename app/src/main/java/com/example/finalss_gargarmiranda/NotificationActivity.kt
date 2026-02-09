@@ -29,10 +29,6 @@ class NotificationActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Setup Bottom Navigation
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        NavigationHelper.setupBottomNavigation(this, bottomNav, R.id.navigation_notifications)
-
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener {
             finish()
@@ -94,5 +90,11 @@ class NotificationActivity : AppCompatActivity() {
                     notificationAdapter.notifyDataSetChanged()
                 }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        NavigationHelper.setupBottomNavigation(this, bottomNav, R.id.navigation_notifications)
     }
 }
