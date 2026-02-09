@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class ReservationAdapter(
@@ -45,6 +46,15 @@ class ReservationAdapter(
             attendeesTextView.text = reservation.attendees
             speakerTextView.text = reservation.speaker
             statusTextView.text = reservation.status
+
+            val statusColor = when (reservation.status.lowercase()) {
+                "pending" -> R.color.yellow
+                "denied" -> R.color.red
+                "reserved" -> R.color.green
+                "approved" -> R.color.green
+                else -> R.color.black
+            }
+            statusTextView.setTextColor(ContextCompat.getColor(itemView.context, statusColor))
 
             itemView.setOnClickListener {
                 onItemClick(reservation)
